@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    background-color: bisque;
+}
+
+
+/* header */
+
+.encabezado{ 
+    background-image: url(../img/paneles.jpeg);
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    opacity: 80%;
+    grid-area: header;
+
+
+}
+
+.encabezado div {
+    height: 100px;
+    width: 500px;
+    position: absolute;
+
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+margin: auto;
+
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 4px  3px #41463d;
+
+}
+
+/* nav */
+
+nav {
+    background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+}
+
+
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 2rem;
+
+}
+
+a{
+    text-decoration: none;
+    font-weight:bold ;
+    text-transform: uppercase;
+    color: black
+}
+
+
+/* info principal */
+
+
+section {
+    margin: 1rem;
+    padding:  0,5rem;
+    height: 50rem;
+
+    /* los acomodo con flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+
+section img {
+    width: 20rem;
+    border-radius: 4px;
+}
+
+section button {
+    border-radius: 5px;
+    background-color: #b8cdf8;
+    width: 10rem;
+    height: 3rem;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px black (0,0,0,0.75)
+}
+
+footer{
+    padding-top: 2rem;
+    background-color: beige;
+    text-align: center;
+    grid-area: footer;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 2rem;
+
+}
+
+
+/* trabajamos con grid */
+
+.casaA {
+    grid-area: casaA;
+
+}
+
+.casaB {
+    grid-area: casaB;
+    
+}
+
+.casaC {
+    grid-area: casaC;
+    
+}
+
+.casaD {
+    grid-area: casaD;
+    
+}
+
+.gridPadre {
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "nav nav nav nav"
+    "casaA casaB casaC casaD"
+    "casaA casaB casaC casaD"
+    "footer footer footer footer";
+}
+
+/* tableta */
+@media (min-width: 700px) and (max-width: 1000px) 
+{
+    .gridPadre{
+        grid-template-areas:
+        "header header"
+        "nav nav"
+        "casaA casaB"
+        "casaC casaD"
+        "footer footer";
+    }
+    section img {
+        width: 300px;
+    }
+}
+
+/* vista movil */
+
+@media (max-width: 699px) {
+    .gridPadre{
+        grid-template-areas:
+        "header"
+        "nav"
+        "casaA"
+        "casaB"
+        "casaC"
+        "casaD"
+        "footer";
+    }
+    html {
+        font-size: 80%;
+    }
+
+    nav {
+        position: static;
+    }
+    .encabezado div{
+        max-width: 90%;
+    }
+
+    section {
+        text-align: center;
+
+    }
+
+    section img {
+        width: 300px;
+        
+    }
+
+}
